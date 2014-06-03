@@ -221,7 +221,7 @@ $markup .= drupal_render($pager);
                         <p class="fragment">node_load_multiple wraps around entity_load_multiple</p>
                         <p class="fragment">entity_load_multiple wraps around $controller->loadMultiple()</p>
                         <p class="fragment">$controller is the StorageController for the entity</p>
-                        <p class="fragment">The storage controller is likely DatabaseStorageController class</p>
+                        <p class="fragment">The storage controller is likely EntityDatabaseStorage class</p>
                     </section>
                     <section>
                         <h2>entity_load_multiple()</h2>
@@ -256,7 +256,7 @@ $nodes = entity_load_multiple('node', $nids = array())
                         <p class="fragment">node_save() is gone</p>
                         <p class="fragment">entity_create wraps around $controller->create()</p>
                         <p class="fragment">$controller is the StorageController for the entity</p>
-                        <p class="fragment">The storage controller is likely DatabaseStorageController class</p>
+                        <p class="fragment">The storage controller is likely EntityDatabaseStorage class</p>
                     </section>
                     <section>
                         <h2>entity_create()</h2>
@@ -336,7 +336,7 @@ $type = $node->type;
 // Note: Use instead of arg()
                             </code>
                         </pre>
-                        <p class="fragment">This will change: https://drupal.org/node/2238217</p>
+                        <p class="fragment">As of 6 hours ago: https://drupal.org/node/2238217</p>
                         <p class="fragment">\Drupal::routeMatch() service wrapper</p>
                     </section>
                     <section>
@@ -445,8 +445,8 @@ $fieldInfo->getInstance('node', 'article', 'field_name');
                         <h3>D7: field_create_field()</h3>
                         <h3>creates a field</h3>
                         <p class="fragment">The field configuration (field_config) is now an entity type</p>
-                        <p class="fragment">entity_create() invokes the create method of the StorageController</p>
-                        <p class="fragment">The field_config entity uses FieldConfigStorageController</p>
+                        <p class="fragment">entity_create() invokes the create method of the EntityStorageBase (abstract)</p>
+                        <p class="fragment">The field_config maps to class FieldConfig and uses FieldConfigStorage</p>
                         <p class="fragment">All other methods are in \Drupal\field\Entity\FieldConfig</p>
                     </section>
                     <section>
@@ -507,8 +507,8 @@ $field->save();
                         <h3>D7: field_create_instance()</h3>
                         <h3>create instance of field, binding it to a bundle</h3>
                         <p class="fragment">The field instance configuration (field_instance_config) is now an entity type</p>
-                        <p class="fragment">entity_create() invokes the create method of the StorageController</p>
-                        <p class="fragment">The field_instance_config entity uses FieldInstanceConfigStorageController</p>
+                        <p class="fragment">entity_create() invokes the create method of the EntityStorageBase (abstract)</p>
+                        <p class="fragment">The field_instance_config maps to class FieldInstanceConfig and uses FieldInstanceConfigStorage</p>
                         <p class="fragment">All other methods are in \Drupal\field\Entity\FieldInstanceConfig</p>
                     </section>
                     <section>
@@ -927,10 +927,16 @@ public function settingsForm(array $form, array &$form_state, EditorEntity $edit
                 <section>
                     <section>
                         <h2>More Bonus!</h2>
+                        <h3>arg() is gone!!!</h3>
+                        <img src="https://zomgwtfbbqq.files.wordpress.com/2010/09/omgwtfbbq.jpg" height="400px"/>
+                        <p class="fragment">https://drupal.org/node/2274705</p>
+                    </section>
+                    <section>
+                        <h2>More Bonus!</h2>
                         <h3>\Drupal</h3>
                         <p class="fragment">Static service container wrapper</p>
                         <p class="fragment">A unified global accessor to arbitrary services</p>
-                        <p class="fragment">Ex: </p>
+                        <p class="fragment">Ex: hasRequest(), httpClient(), queue()</p>
                     </section>
                 </section>
 
