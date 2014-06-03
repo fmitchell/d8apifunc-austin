@@ -1,0 +1,202 @@
+/**
+ * Phase2 Theme for reveal.js
+ */
+
+
+// Default mixins and settings -----------------
+@import "_mixins";
+@import "_settings";
+// ---------------------------------------------
+
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: 'Lato', sans-serif;
+$mainColor: #000;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingColor: #000;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$backgroundColor: #FFF;
+$linkColor: #1472ac;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: rgba(0, 0, 0, 0.99);
+
+$primary: #ea8f40;
+
+// Phase2 specific colors
+$p2orange: #ff7900;
+
+@mixin bodyBackground() {
+  @include vertical-gradient( rgba(255,255,255,1), rgba(229,229,229,1) );
+}
+
+// Theme template ------------------------------
+@import "_theme";
+// ---------------------------------------------
+
+.reveal {
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  .icon {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    z-index: 100;
+  }
+  i {
+    font-family: FontAwesome;
+    font-style: normal;
+  }
+  h1, h2, h3, h4, h5, h6, small {
+    
+  }
+
+  h1 {
+    font-size: 2.5em;
+    font-weight: 100;
+    line-height: 1.333em;
+    margin-bottom: 0.5em;
+  }
+  h2 {
+    font-size: 1.75em;
+    font-weight: 100;
+    line-height: 1.333em;
+  }
+  small {
+    color: #555;
+    text-transform: uppercase;
+  }
+  .progress span {
+    background: $primary;
+  }
+  section img {
+    border: none;
+  }
+  section {
+    &.front {
+      h2 {
+        margin-top: 1.5em;
+      }
+      small {
+        color: $primary;
+      }
+    }
+  }
+  .controls {
+    
+  }
+
+  // Controls
+  // @TODO: Add controls
+  .controls {
+    left: 10px;
+    right: inherit;
+  }
+
+  // Branding widget
+  .phase2-branding {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    &.hidden {
+      display: none;
+    }
+    &.default {
+      background: url("img/p2-icon.png") center center no-repeat;
+      width: 50px;
+      height: 54px;
+    }
+    &.front {
+      background: url("img/p2-full-icon.png") center center no-repeat;
+      width: 194px;
+      height: 54px;
+    }
+  }
+
+  // Specific slide styles
+  section {
+    &.front {
+      .date {
+        margin-top: 1em;
+      }
+      h3 {
+        color: $p2orange;
+        font-size: 0.85em;
+      }
+    }
+    &.dark {
+      h2 {
+        font-weight: bold;
+        color: $p2orange;
+      }
+    }
+    &.full-image {
+      width: 100%;
+      height: 100%;
+      .photo-credit {
+        background: rgba(10, 10, 10, 0.75);
+        color: #EEE;
+        font-size: 0.75em;
+        line-height: 1em;
+        position: absolute;
+        top: 5%;
+        right: 0;
+        padding: 0.5em;
+        a {
+          color: $p2orange;
+        }
+      }
+    }
+    &.bio {
+      .wrapper {
+        .mug {
+          width: 35%;
+          float: left;
+          padding-right: 2%;
+        }
+        .info {
+          width: 63%;
+          float: left;
+          text-align: left;
+        }
+      }
+    }
+    &.pull-quote {
+      blockquote {
+        border: none;
+        font-weight: 100;
+        font-size: 1.25em;
+        line-height: 1.25em;
+        margin: 0 100px;
+        text-align: center;
+        box-shadow: none;
+        width: auto;
+      }
+      .pull-quote-attribute {
+        margin-top: 1em;
+      }
+      .pull-quote-name {
+        color: $p2orange;
+        font-size: 0.85em;
+      }
+      .pull-quote-title {
+        color: #666;
+        font-weight: 100;
+        font-size: 0.85em;
+        margin-top: 0.25em;
+      }
+      .pull-quote-mark {
+        position: absolute;
+        top: 35%;
+        &.opening {
+          left: 0;
+        }
+        &.closing {
+          right: 0;
+          -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
