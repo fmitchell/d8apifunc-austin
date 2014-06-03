@@ -227,8 +227,12 @@ $markup .= drupal_render($pager);
                         <h2>entity_load_multiple()</h2>
                         <pre>
                             <code data-trim contenteditable>
-$nodes = entity_load_multiple('node', $nids = array())
-// Note: Cached
+$nodes = entity_load_multiple('node', $nids = array());
+
+// Simpler
+use \Drupal\node\Entity\Node;
+$node = Node::load(1);
+$nodes = Node::loadMultiple(array(1, 2, 3));
                             </code>
                         </pre>
                     </section>
@@ -264,6 +268,10 @@ $nodes = entity_load_multiple('node', $nids = array())
                             <code data-trim contenteditable>
 // Create a new forum instance.
 $node = entity_create('node', array('otherValue' => 'foo'));
+
+// Simpler
+$node = Node::create(array('title' => 'My title'));
+
 // Save entity to the database.
 $node->save();
 // Note: nothing is returned
