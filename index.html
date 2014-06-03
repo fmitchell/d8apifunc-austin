@@ -86,7 +86,7 @@
                     </section>
                     <section>
                         <h2>Additional Disclaimer! Disclaimer!</h2>
-                        <h3 class="fragment">All recommendations are based on D8 as of March 25, 2014</h3>
+                        <h3 class="fragment">All recommendations are based on D8 as of June 3, 2014</h3>
                         <h3 class="fragment">Things may (and probably will) change</h3>
                     </section>
                 </section>
@@ -100,6 +100,7 @@
                         <h2>String::checkPlain()</h2>
                         <h3>D7: check_plain()</h3>
                         <p>Wrapper for htmlspecialchars with UTF-8 encoding</p>
+                        <p class="fragment">Still in bootstrap <br /><code>use Drupal\Component\Utility\String;</code></p>
                     </section>
                     <section>
                         <h2>String::placeholder()</h2>
@@ -165,6 +166,7 @@ return drupal_render($render);
                         <h2>D8: drupal_render() is EVERYTHING!</h2>
                         <h3>Bye-bye theme()</h3>
                         <p>_theme() is an internal function</p>
+                        <p>#type defined in hook_element_info</p>
                     </section>
                     <section>
                         <p>D7</p>
@@ -334,8 +336,8 @@ $type = $node->type;
 // Note: Use instead of arg()
                             </code>
                         </pre>
-                        <p class="fragment">Discussion: https://drupal.org/node/2124749</p>
-                        <p class="fragment">Possibly have $request, $route_match, and $context_container as separate objects.</p>
+                        <p class="fragment">This will change: https://drupal.org/node/2238217</p>
+                        <p class="fragment">\Drupal::routeMatch() service wrapper</p>
                     </section>
                     <section>
                         <h2>menu_tree_page_data()</h2>
@@ -421,6 +423,7 @@ $fieldInfo = \Drupal\field\Field::fieldInfo();
 $fieldInfo->getField($entity_type, $field_name);
                             </code>
                         </pre>
+                        <p class="fragment">\Drupal::service('field.info'); (bonus)</p>
                     </section>
                     <section>
                         <h2>$fieldInfo->getInstance()</h2>
@@ -918,6 +921,16 @@ public function settingsForm(array $form, array &$form_state, EditorEntity $edit
                         <p class="fragment">Technically, no.</p>
                         <p class="fragment">#attached could be a +3</p>
                         <p class="fragment"><strike>drupal_add_js, drupal_add_css, drupal_add_library</strike></p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>More Bonus!</h2>
+                        <h3>\Drupal</h3>
+                        <p class="fragment">Static service container wrapper</p>
+                        <p class="fragment">A unified global accessor to arbitrary services</p>
+                        <p class="fragment">Ex: </p>
                     </section>
                 </section>
 
