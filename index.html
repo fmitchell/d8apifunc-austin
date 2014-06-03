@@ -42,7 +42,7 @@
 						<small>Created by <a href="http://brightplum.com">Fredric Mitchell</a> / <a href="http://twitter.com/fredricmitchell">@fredricmitchell</a></small>
 					</p>
                     <p>
-                        <small>http://brightplumbox.com/d8apifuncnyccamp2014/#/</small>
+                        <small>http://bit.ly/d8func-austin</small>
                     </p>
 				</section>
 
@@ -569,29 +569,6 @@ $field_instance->save();
                         </pre>
                     </section>
                     <section>
-                        <h2>Bonus!</h2>
-                        <h3>Using the field API functions</h3>
-                        <p>D7</p>
-                        <pre>
-                            <code data-trim contenteditable>
-function mymodule_install_fields($fields, $instance_fields, $type = 'node', $bundle) {
-    foreach ($fields as $field) {
-        // Create the field if it doesn't exist.
-        if (!field_info_field($field['field_name'])) {
-            field_create_field($field);
-        }
-    }
-    unset($field);
-    foreach ($instance_fields as $field) {
-        if (!field_info_instance($type, $field['field_name'], $bundle)) {
-            field_create_instance($field);
-        }
-    }
-}
-                            </code>
-                        </pre>
-                    </section>
-                    <section>
                         <h2>save()</h2>
                         <h3>D7: field_update_field()</h3>
                         <h3>D7: field_update_instance()</h3>
@@ -945,17 +922,23 @@ public function settingsForm(array $form, array &$form_state, EditorEntity $edit
                 </section>
 
                 <section>
-                    <h2>What's Next?</h2>
-                    <p class="fragment">Contribute to Examples: https://drupal.org/project/examples</p>
-                    <p class="fragment">Read docs: https://drupal.org/developing/api/8</p>
-                    <p class="fragment">Scaffold: https://github.com/hechoendrupal/DrupalAppConsole</p>
+                    <section>
+                        <h2>What's Next?</h2>
+                        <p class="fragment">Contribute to Examples: https://drupal.org/project/examples</p>
+                        <p class="fragment">Read docs: https://drupal.org/developing/api/8</p>
+                        <p class="fragment">Scaffold: https://github.com/hechoendrupal/DrupalAppConsole</p>
+                    </section>
+                    <section>
+                        <h2>What's Next (at Drupalcon)?</h2>
+                        <img src="https://drupal.org/files/issues/drupal-con-austin-sprint-slide.jpg" height="550px"/>
+                    </section>
                 </section>
 
 				<section>
 					<h2>Questions?</h2>
 					<h3>By Fredric Mitchell / @fredricmitchell</h3>
-                    <p><strong>Slides:</strong> http://brightplumbox.com/d8apifuncnyccamp2014/#/</p>
-                    <p><strong>Slides Repo:</strong> https://github.com/fmitchell/d8apifuncnyccamp2014</p>
+                    <p><strong>Slides:</strong> http://bit.ly/d8func-austin</p>
+                    <p><strong>Slides Repo:</strong> https://github.com/fmitchell/d8apifunc-austin</p>
 				</section>
 
 			</div>
